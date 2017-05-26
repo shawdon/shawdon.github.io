@@ -222,6 +222,8 @@ paginate = 10
 
 <p>-t, &ndash;theme string:               theme to use (located in /themes/THEMENAME/)</p>
 
+<p>Now the site is available at <a href="http://localhost:1313/">http://localhost:1313/</a> .</p>
+
 <h1 id="make-posts-public">Make posts public</h1>
 
 <pre><code class="language-shell">hugo undraft content/post/&lt;post-file&gt;
@@ -229,8 +231,51 @@ paginate = 10
 
 <h1 id="generate-website">Generate website</h1>
 
-<pre><code class="language-shell">git submodule add -b master https://github.com/shawdon/shawdon.github.io.git public
+<pre><code class="language-shell">hugo
+</code></pre>
+
+<p>After that, <code>public</code> directory will be created containing the generated website source.</p>
+
+<h1 id="deploy-on-github-pages">Deploy on GitHub Pages</h1>
+
+<pre><code class="language-shell">rm -rf public
+git submodule add -b master https://github.com/shawdon/shawdon.github.io.git public
 hugo
+cd public
+git add .
+git commit -m &quot;deploy blog for the 1st time&quot;
+git push origin master
+</code></pre>
+
+<p>There is also a script to automate it:</p>
+
+<pre><code class="language-sh">#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+
+echo &quot;Build the site&quot;
+hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+# Go To Public folder
+cd public
+# Add changes to git.
+git add .
+
+echo &quot;Commit changes&quot;
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;$1&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+
+echo &quot;Push source and build repos&quot;
+git push origin master
+
+# Come Back up to the Project Root
+cd ..
+
+echo &quot;Deploy success&quot;
 </code></pre>
 
   </div>
