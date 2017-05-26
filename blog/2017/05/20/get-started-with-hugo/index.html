@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Get Started with Hugo &middot; Shawdon</title>
+
+  
+  <link rel="stylesheet" href="https://shawdon.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://shawdon.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://shawdon.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://shawdon.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://shawdon.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://shawdon.github.io/css/highlight/sunburst.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://shawdon.github.io/touch-icon-144-precomposed.png">
+  <link href="https://shawdon.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'Your Google Analytics tracking code', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Shawdon</h1>
+      <p class="lead">Winter is coming.</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://shawdon.github.io/">Home</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </li>
+    </ul>
+
+    
+    <p><script id='flattr'>
+      (function(id){
+        var s = document.getElementById(id);
+        var f = document.createElement('iframe');
+        f.src = '//api.flattr.com/button/view/?uid=&button=compact&url=https:\/\/shawdon.github.io\/&title=Shawdon\x27s Blog';
+        f.title = 'Flattr';
+        f.height = 20;
+        f.width = 110;
+        f.style.borderWidth = 0;
+        s.parentNode.insertBefore(f, s);
+      })('flattr');
+    </script></p>
+    
+
+    <p>Copyright &copy; 2017 <a href="https://shawdon.github.io/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Get Started with Hugo</h1>
+    <span class="post-date">May 20, 2017 &middot; 3 minute read &middot; <a href="https://shawdon.github.io/blog/2017/05/20/get-started-with-hugo/#disqus_thread">Comments</a>
+    </span>
+    
+
+<p>[TOC]</p>
+
+<h1 id="create-a-new-site">Create a new site</h1>
+
+<pre><code class="language-shell">hugo new site &lt;your-site-name&gt;
+</code></pre>
+
+<p>The new directory <code>&lt;your-site-name&gt;</code> has the following layout:</p>
+
+<pre><code class="language-shell">blog
+├── archetypes
+├── config.toml
+├── content
+├── data
+├── layouts
+├── static
+└── themes
+</code></pre>
+
+<h1 id="choose-a-theme">Choose a theme</h1>
+
+<pre><code class="language-shell">git submodule add -b master https://github.com/zyro/hyde-x.git themes/hyde-x
+</code></pre>
+
+<h1 id="configuration">Configuration</h1>
+
+<pre><code class="language-toml">baseURL = &quot;https://shawdon.github.io/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;My New Hugo Site&quot;
+disqusShortname = &quot;your_disqus_shortname&quot; # Optional, enable Disqus integration
+MetaDataFormat = &quot;toml&quot;
+theme = &quot;hyde-x&quot;
+paginate = 10
+
+[author]
+    name = &quot;Shawdon&quot;
+
+[permalinks]
+    # Optional. Change the permalink format for the 'post' content type.
+    # The format shown here is the same one Jekyll/Octopress uses by default.
+    post = &quot;/blog/:year/:month/:day/:title/&quot;
+
+[taxonomies]
+    # Optional. Use if you want tags and lists.
+    category = &quot;categories&quot;
+
+#
+# All parameters below here are optional and can be mixed and matched.
+#
+[params]
+    # If false display full article contents in blog index.
+    # Otherwise show description and 'read on' link to individual blog post page.
+    # Default (if omitted) is true.
+    truncate = true
+
+    # Used when a given page doesn't set its own.
+    defaultDescription = &quot;Your default page description&quot;
+    defaultKeywords = &quot;your,default,page,keywords&quot;
+
+    # Hide estimated reading time for posts.
+    # Default (if omitted) is false.
+    hideReadingTime = false
+
+    # Changes sidebar background and link/accent colours.
+    # See below for more colour options.
+    # This also works: &quot;theme-base-08 layout-reverse&quot;, or just &quot;layout-reverse&quot;.
+    theme = &quot;&quot;
+
+    # Select a syntax highight.
+    # Check the static/css/highlight directory for options.
+    highlight = &quot;sunburst&quot;
+
+    # Optional additional custom CSS file URL, will override other styles.
+    customCSS = &quot;&quot;
+
+    # Displays under the author name in the sidebar, keep it short.
+    # You can use markdown here.
+    tagline = &quot;Shut up and fuck the world.&quot;
+
+    # Text for the top menu link, which goes the root URL for the site.
+    # Default (if omitted) is &quot;Blog&quot;.
+    home = &quot;Home&quot;
+
+    # Metadata used to drive integrations.
+    googleAnalytics = &quot;Your Google Analytics tracking code&quot;
+    gravatarHash = &quot;MD5 hash of your Gravatar email address&quot;
+
+    # Sidebar social links, these must be full URLs.
+    github = &quot;&quot;
+    bitbucket = &quot;&quot;
+    stackOverflow = &quot;&quot;
+    linkedin = &quot;&quot;
+    googleplus = &quot;&quot;
+    facebook = &quot;&quot;
+    twitter = &quot;&quot;
+    youtube = &quot;&quot;
+
+    # Other social-like sidebar links
+    rss = false  # switch to true to enable RSS icon link
+    flattr = &quot;&quot;  # populate with your flattr uid
+</code></pre>
+
+<h1 id="add-a-post">Add a post</h1>
+
+<pre><code class="language-shell">hugo new post/&lt;post-name&gt;.&lt;file-format&gt;
+</code></pre>
+
+<p>The new post is here:</p>
+
+<pre><code class="language-shell">content
+└── post
+    └── get-started-with-hugo.md
+</code></pre>
+
+<h1 id="server-the-site">Server the site</h1>
+
+<pre><code class="language-shell">hugo server -D -t=hyde-x
+</code></pre>
+
+<p>-D, &ndash;buildDrafts:                include content marked as draft</p>
+
+<p>-t, &ndash;theme string:               theme to use (located in /themes/THEMENAME/)</p>
+
+<h1 id="make-posts-public">Make posts public</h1>
+
+<pre><code class="language-shell">hugo undraft content/post/&lt;post-file&gt;
+</code></pre>
+
+<h1 id="generate-website">Generate website</h1>
+
+<pre><code class="language-shell">git submodule add -b master https://github.com/shawdon/shawdon.github.io.git public
+hugo
+</code></pre>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "your_disqus_shortname";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "your_disqus_shortname";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://shawdon.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

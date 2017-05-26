@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Shawdon&#39;s Blog</title>
+    <link>https://shawdon.github.io/post/</link>
+    <description>Recent content in Posts on Shawdon&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 May 2017 19:39:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://shawdon.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Get Started with Hugo</title>
+      <link>https://shawdon.github.io/blog/2017/05/20/get-started-with-hugo/</link>
+      <pubDate>Sat, 20 May 2017 19:39:03 +0800</pubDate>
+      
+      <guid>https://shawdon.github.io/blog/2017/05/20/get-started-with-hugo/</guid>
+      <description>[TOC]
+Create a new site hugo new site &amp;lt;your-site-name&amp;gt;  The new directory &amp;lt;your-site-name&amp;gt; has the following layout:
+blog ├── archetypes ├── config.toml ├── content ├── data ├── layouts ├── static └── themes  Choose a theme git submodule add -b master https://github.com/zyro/hyde-x.git themes/hyde-x  Configuration baseURL = &amp;quot;https://shawdon.github.io/&amp;quot; languageCode = &amp;quot;en-us&amp;quot; title = &amp;quot;My New Hugo Site&amp;quot; disqusShortname = &amp;quot;your_disqus_shortname&amp;quot; # Optional, enable Disqus integration MetaDataFormat = &amp;quot;toml&amp;quot; theme = &amp;quot;hyde-x&amp;quot; paginate = 10 [author] name = &amp;quot;Shawdon&amp;quot; [permalinks] # Optional.</description>
+    </item>
+    
+  </channel>
+</rss>
